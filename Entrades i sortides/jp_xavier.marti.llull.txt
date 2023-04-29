@@ -1,0 +1,639 @@
+#	E N T R A D A		C O M E N T A D A
+
+10													// LLEGIM 10 MISSATGES, CONCRETAMENT UNA CONVERSACIO ENTRE DUES PERSONES 
+Persona1_1
+Hola bon dia com estem?
+Persona2_1
+Bon dia, jo be i tu?
+Persona1_2
+Tot en ordre, escolta quan quedem?
+Persona2_2
+Avui no puc, pero tinc el cap de setmana lliure.
+Persona1_3
+D'acord, llavors el dissabte podriem anar a sopar.
+Persona2_3
+Perfecte, fa tant que no ens veiem que tinc ganes de veure't.
+Persona1_4
+Jo igual, ja tocava quedar.
+Persona2_4
+D'acord doncs quedem aixi no?
+Persona1_5
+Si, el dissabte anem xerrant l'hora.
+Persona2_5
+Perfecte! Anem xerrant...
+2													// D'INICI LLEGIM DUES REIXETES, UNA UN POC MES GRAN QUE L'ALTRA. AMBDUES HAN DE SER VALIDES
+4 4													// 4*4 = 4²
+1 3 3 2 2 4 4 1
+6 9													// 9*4 = 6²
+4 2 2 4 3 1 4 4 5 1 1 3 1 5 5 5 6 6
+2													// LLEGIM DOS PATRONS, UN AMB NOMBRES MOLT DISTANTS I L'ALTRE AMB NOMBRES MÉS PETITS I PROPERS
+93 47 22 15 9 -1 -1 -1 -1 -1 33 -1 -1
+7 8 3 -1 -1 5 -1 -1 10 9 -1 -1 4 -1 -1
+listar_mensajes											// ESCRIVIM TOTS ELS MISSATGES, REIXETES I PATRONS INTRODUITS
+listar_rejillas
+listar_patrones
+nuevo_mensaje												// AFEGIM NOUS MISSATGES, EL PRIMER AMB IDENTIFICADOR EXISTENT PER TENIR UN CAS D'ERROR, I EN
+Persona1_1												// GENERAL DE DIVERSES MIDES
+On ets? Fa mitja hora que he arribat, fas tard!
+nm 
+Texto1
+Dentro del jardin hay un rosal, aun esta verde.
+nuevo_mensaje
+Texto2
+Si, solo verde, las ramas estan cubiertas por hojas y espinas, pero si concentras tu vista observaras pequenos brotes.
+nm
+Texto3
+El senor Mardon, era un gentil hombre de aproximadamente 47 años.
+nm
+Texto4
+Como de costumbre desperte dos horas antes de la clase, no sucede de casualidad.
+nuevo_mensaje
+Texto5
+Algun dia descifrare los misterios de la vida, y encontrare que todos los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir.
+nueva_rejilla												// AFEGIM NOVES REIXETES, LES DUES PRIMERES AMB ELS DOS TIPUS D'ERROR QUE ES PODEN DONAR:
+6 8 													// 8*4 != 6²
+4 4 2 4 3 1 4 2 5 5 1 5 2 5 5 1
+nr 
+6 9													// BUITS INVALIDS
+1 1 1 2 2 1 2 5 3 5 3 6 4 3 4 5 2 4
+nr
+6 9
+1 1 1 2 2 1 2 5 3 5 3 6 4 3 4 5 4 6
+nueva_rejilla
+4 4
+1 2 3 2 3 4 1 4
+nr
+8 16													// 16*4 = 8² REIXETA GRAN
+1 1 1 2 1 3 1 4 2 1 2 2 2 3 2 4 3 1 3 2 3 3 3 4 4 1 4 2 4 3 4 4					// AGAFEM LES POSICIONS DEL PRIMER QUADRANT
+nuevo_patron												// AFEGIM UN PARELL DE PATRONS DE DIFERENT FORMA I AMB NOMBRES DIFERENTS
+40 4 62 -1 -1 -1 6 -1 77 -1 -1
+np
+22 -1 1 -1 5 -1 13 -1 -1
+borra_mensaje Persona1_1										// BORREM MISSATGES. EL SEGON ES INEXISTENT
+borra_mensaje Persona1_6
+bm Texto1
+lm													// TORNEM A LLISTAR MISSATGES, REIXETES I PATRONS DESPRES DE LES MODIFICACIONS D'AFEGIR I ESBORRAR
+lr
+lp
+cr 5													// CODIFIQUEM MISSATGES (PROVEM DIVERSOS TAMANYS) INTRODUITS MITJANÇANT DIVERSES REIXETES
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.
+codificar_rejilla 1											// REIXETA EXISTENT, MIDA NORMAL
+El otro dia fui a jugar a futbol con mis amigos.
+codificar_rejilla 6											// REIXETA INEXISTENT
+El otro dia fui a jugar a futbol con mis amigos.
+cr 3
+I wake up to the sounds of the silence that allows. From my mind to run around, with my ear up to the ground.
+codificar_guardado_rejilla Texto3 2									// CODIFIQUEM MISSATGES GUARDATS. PROVEM TAMBE L'ERROR DE REIXETA INEXISTENT I MISSATGE INEXISTENT:
+cgr Texto6 3												// MISSATGE INEXISTENT
+cgr Texto4 3
+cgr Persona2_2 0											// REIXETA AMB IDENTIFICADOR INVALID
+codificar_guardado_rejilla Persona2_5 4
+cgr Persona2_3 2
+cgr Persona1_3 1
+cgr Texto5 3
+decodificar_rejilla 43											// DECODIFIQUEM MISSATGES INTRODUITS, PROVEM ERROR REIXETA INEXISTENT I MIDA DEL MISSATGE INVALIDA
+a H ogol l,?a  q  u,    a  em     ti
+decodificar_rejilla 2
+qsP e fuvraef  tneaeiceotm ne qetn ,e u eanu  ertse ' di n tc .e      vg
+dr 2
+jajajajaja												// MIDA INVALIDA (10 % 16 != 0)
+decodificar_rejilla 3											// PROVEM DOS MISSATGES GRANS AMB LES MATEIXES REIXETES QUE ABANS HAN ESTAT CODIFICATS PER QUEDAR AIXI
+Al dstgescuerer n lodiiafsios ra dmie ,  tly eaotrda vreindac o lqonosue cy omadecmene sin qois suen eioun t mde lotermodos enfutmo ie inrnadioncar  sdahooeadnas, t rpoaitide no,ne srggeio, nds iu enamnbao a, t eesra uri  no q  es cmiubsuteer   i d  r.
+dr 5
+Loreing m ipelitsum . Aedoloneanr siectet amtueret,  adiconspisc comciismodo nat ligoqueula  penegetan m dolassaor. . CuAenem soatib ridus eicult maus mgnisus.  dismont pares, turinascent eturDone, prc quetiuam fm quelisis, , ul peltriclenties esqunec,e eusem. jus Nulto, la cfrinonsegillquatenim mas. Dosa qnec uis pedea vem jul, asto,liqu rhoet nncusec, et, vulparcuutat. Ine eg eni ut, dic imptum erdifeliet as eu, vee, jnenaustotis . Nuvitallam pedpibue mos. Vllisivam preus etiumncid. Inunt.tege Crar tis dalemetellntumus.  semAeneper an lnisiputa. Aete eneanleif vulend eo lnd aigulc, ea, pnim.ortt Aliitorat v eu,itae con, elsequeifequamat a lor, teem allusnte,. Ph daperraibus qui in,s, f viveugiaseluisqlus ue rviveutrurra m. Anullariua uts la metoreeus vt. Qenea Curn imabitperdur uiet.llam Eti nisam ui veltril auciesgue.corpus. er uMaecltrienascies tem nisdui.i. N Etiam eam rget honcpus,empe telr lilus beroeget, si conncusdime, sentumm qu rhoam st amnuncet a, bldipiandiscint veg seipsum nem. Nque am qsed uam l, ls neuctuc ods puio elvint anar, , lohendrem.reri Maet idcenate to veincinenadunttis  temfaucpus. sap Donien ec vut litaeiberibus ero. Nus fallamucib quius ts ant amte. et oEtiarci m siegetinci    dunt    . Du    is l    eo.                             
+cp 0 44												// PROVEM ERROR DE CODIFICAR PATRÓ AMB IDENTIFICADOR INVÀLID
+Hola aixo donara error jejeje.
+codificar_patron 3 22											// CODIFIQUEM UN MISSATGE GRAN AMB BLOCS MITJANCERS
+Donec bibendum id tellus quis eleifend. Quisque eu eros erat. Quisque non euismod ipsum. Nam iaculis neque ac iaculis accumsan. Duis mi nunc, sollicitudin eu dignissim nec, placerat nec massa. Maecenas rutrum nisl ipsum, sit amet posuere ante fringilla a. Quisque tincidunt erat tortor, sit amet aliquet dolor commodo at. Nullam ullamcorper nulla vehicula sem venenatis vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut orci mi. Nullam sed dapibus augue, at sollicitudin velit. 
+cp 1 4													// CODIFIQUEM UN MISSATGE PETIT AMB UN PATRÓ BEN PROU GRAN I AMB NOMBRES GRANS
+abcdefghijklmnopqrstuvwxyz      
+codificar_guardado_patron Persona2_3 2 13								// ANEM CODIFICANT AMB PATRONS DIFERENTS MISSATGES QUE TENIM GUARDATS I PROVANT DIFERENTES MIDES DE BLOC
+codificar_guardado_patron Texto2 1 10
+cgp Texto5 5 64											// PROVEM ERROR D'IDENTIFICADOR INVÀLID
+cgp Texto5 4 64
+cgp Texto6 1 23    											// PROVEM ERROR DE MISSATGE INEXISTENT
+dp 3 22												// APROFITEM DOS MISSATGES CODIFICATS PER DECODIFICAR-LOS AMB EL MATEIX PATRÓ I MIDA DE BLOC, A VEURE SI
+													// QUEDEN IGUAL QUE AL PRINCIPI 
+lstD,HP2+ith{6Hmj$zD55>w&P>2aH.pkml.7h4$WT2<:yk^.>m.;sy$k;*x4$WT2<:yk^78\H.yows8-$otyT6VHRgLH2O,>pow&7.u{i&@,H2eiT52aH*giys<*r4$JT2<Hqo^7>\,T$ysr52gox{C27Hi{^-2U72wymsH7ii0&O5*,ix@=H\.,$sey<*2&QgD,.7ey^;>b;>q&ro<5$otyT6THwoSH*[.=$vsy>.vk$gM=.HjxH70W55e&e4HyyowwT.H=mtB2-c7=$kvg=HxuvzN;THwoSH*[.=$gpo:>iz$jN58;$iN66]-8$gx4HvyrpgLH>5pgL,8`9.v&r{55e&zkG2,>pg^<.[H?itit*=my$|T59>xgS.Vmx.prit=.wwyk^1*+mz@7=m68vhm&=;myxoP>.HwkM.,b><$kx&7.x{w&D=H6erD<>O-*$les.<$gg&S>;9my^.0S<=ey2&x;ekwkM=H>x&N;,WH6m4$T>5pgq&R.-HhgO2+c<He{k{.T$gx&R855miH=>R27$|ir2=2&
+decodificar_patron 4 64
+W#h,o6i b6i{tyv|sww{!#|*!$n*u{) p*%zf6yw!-nzbB60!{syp%")b)j6r,f6+&e&!#t*!yf$j%|*!0%zfyv*j&s{t6(,f6y&n{-{o6z%!$&$f%y&!zr+f)r owe&6|v{s&s6m&x6j%q dwi&tB-'p)%wi&)w!%fzb6" f%j6t{%+jztB!*v%!{rxb)h&B6o&!{x6v%f6u)n}fznw-6r*!,s6n *+f)n&!(#{!zj*d,x)j)3
+dp 7 2													// PROVEM ERROR DE DECODIFICAR AMB PATRÓ INVÀLID
+RANDOM
+fin
+
+#	E N T R A D A 		S E N S E	    C O M E N T A R
+
+10
+Persona1_1
+Hola bon dia com estem?
+Persona2_1
+Bon dia, jo be i tu?
+Persona1_2
+Tot en ordre, escolta quan quedem?
+Persona2_2
+Avui no puc, pero tinc el cap de setmana lliure.
+Persona1_3
+D'acord, llavors el dissabte podriem anar a sopar.
+Persona2_3
+Perfecte, fa tant que no ens veiem que tinc ganes de veure't.
+Persona1_4
+Jo igual, ja tocava quedar.
+Persona2_4
+D'acord doncs quedem aixi no?
+Persona1_5
+Si, el dissabte anem xerrant l'hora.
+Persona2_5
+Perfecte! Anem xerrant...
+2
+4 4
+1 3 3 2 2 4 4 1
+6 9
+4 2 2 4 3 1 4 4 5 1 1 3 1 5 5 5 6 6
+2
+93 47 22 15 9 -1 -1 -1 -1 -1 33 -1 -1
+7 8 3 -1 -1 5 -1 -1 10 9 -1 -1 4 -1 -1
+listar_mensajes
+listar_rejillas
+listar_patrones
+nuevo_mensaje
+Persona1_1
+On ets? Fa mitja hora que he arribat, fas tard!
+nm 
+Texto1
+Dentro del jardin hay un rosal, aun esta verde.
+nuevo_mensaje
+Texto2
+Si, solo verde, las ramas estan cubiertas por hojas y espinas, pero si concentras tu vista observaras pequenos brotes.
+nm
+Texto3
+El senor Mardon, era un gentil hombre de aproximadamente 47 años.
+nm
+Texto4
+Como de costumbre desperte dos horas antes de la clase, no sucede de casualidad.
+nuevo_mensaje
+Texto5
+Algun dia descifrare los misterios de la vida, y encontrare que todos los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir.
+nueva_rejilla
+6 8 
+4 4 2 4 3 1 4 2 5 5 1 5 2 5 5 1
+nr 
+6 9
+1 1 1 2 2 1 2 5 3 5 3 6 4 3 4 5 2 4
+nr
+6 9
+1 1 1 2 2 1 2 5 3 5 3 6 4 3 4 5 4 6
+nueva_rejilla
+4 4
+1 2 3 2 3 4 1 4
+nr
+8 16
+1 1 1 2 1 3 1 4 2 1 2 2 2 3 2 4 3 1 3 2 3 3 3 4 4 1 4 2 4 3 4 4
+nuevo_patron
+40 4 62 -1 -1 -1 6 -1 77 -1 -1
+np
+22 -1 1 -1 5 -1 13 -1 -1
+borra_mensaje Persona1_1
+borra_mensaje Persona1_6
+bm Texto1
+lm
+lr
+lp
+cr 5
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.
+codificar_rejilla 1
+El otro dia fui a jugar a futbol con mis amigos.
+codificar_rejilla 6
+El otro dia fui a jugar a futbol con mis amigos.
+cr 3
+I wake up to the sounds of the silence that allows. From my mind to run around, with my ear up to the ground.
+codificar_guardado_rejilla Texto3 2
+cgr Texto6 3
+cgr Texto4 3
+cgr Persona2_2 0
+codificar_guardado_rejilla Persona2_5 4
+cgr Persona2_3 2
+cgr Persona1_3 1
+cgr Texto5 3
+decodificar_rejilla 43
+a H ogol l,?a  q  u,    a  em     ti
+decodificar_rejilla 2
+qsP e fuvraef  tneaeiceotm ne qetn ,e u eanu  ertse ' di n tc .e      vg
+dr 2
+jajajajaja
+decodificar_rejilla 3
+Al dstgescuerer n lodiiafsios ra dmie ,  tly eaotrda vreindac o lqonosue cy omadecmene sin qois suen eioun t mde lotermodos enfutmo ie inrnadioncar  sdahooeadnas, t rpoaitide no,ne srggeio, nds iu enamnbao a, t eesra uri  no q  es cmiubsuteer   i d  r.
+dr 5
+Loreing m ipelitsum . Aedoloneanr siectet amtueret,  adiconspisc comciismodo nat ligoqueula  penegetan m dolassaor. . CuAenem soatib ridus eicult maus mgnisus.  dismont pares, turinascent eturDone, prc quetiuam fm quelisis, , ul peltriclenties esqunec,e eusem. jus Nulto, la cfrinonsegillquatenim mas. Dosa qnec uis pedea vem jul, asto,liqu rhoet nncusec, et, vulparcuutat. Ine eg eni ut, dic imptum erdifeliet as eu, vee, jnenaustotis . Nuvitallam pedpibue mos. Vllisivam preus etiumncid. Inunt.tege Crar tis dalemetellntumus.  semAeneper an lnisiputa. Aete eneanleif vulend eo lnd aigulc, ea, pnim.ortt Aliitorat v eu,itae con, elsequeifequamat a lor, teem allusnte,. Ph daperraibus qui in,s, f viveugiaseluisqlus ue rviveutrurra m. Anullariua uts la metoreeus vt. Qenea Curn imabitperdur uiet.llam Eti nisam ui veltril auciesgue.corpus. er uMaecltrienascies tem nisdui.i. N Etiam eam rget honcpus,empe telr lilus beroeget, si conncusdime, sentumm qu rhoam st amnuncet a, bldipiandiscint veg seipsum nem. Nque am qsed uam l, ls neuctuc ods puio elvint anar, , lohendrem.reri Maet idcenate to veincinenadunttis  temfaucpus. sap Donien ec vut litaeiberibus ero. Nus fallamucib quius ts ant amte. et oEtiarci m siegetinci    dunt    . Du    is l    eo.                             
+cp 0 44
+Hola aixo donara error jejeje.
+codificar_patron 3 22
+Donec bibendum id tellus quis eleifend. Quisque eu eros erat. Quisque non euismod ipsum. Nam iaculis neque ac iaculis accumsan. Duis mi nunc, sollicitudin eu dignissim nec, placerat nec massa. Maecenas rutrum nisl ipsum, sit amet posuere ante fringilla a. Quisque tincidunt erat tortor, sit amet aliquet dolor commodo at. Nullam ullamcorper nulla vehicula sem venenatis vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut orci mi. Nullam sed dapibus augue, at sollicitudin velit. 
+cp 1 4
+abcdefghijklmnopqrstuvwxyz      
+codificar_guardado_patron Persona2_3 2 13
+codificar_guardado_patron Texto2 1 10
+cgp Texto5 5 64
+cgp Texto5 4 64
+cgp Texto6 1 23    
+dp 3 22
+lstD,HP2+ith{6Hmj$zD55>w&P>2aH.pkml.7h4$WT2<:yk^.>m.;sy$k;*x4$WT2<:yk^78\H.yows8-$otyT6VHRgLH2O,>pow&7.u{i&@,H2eiT52aH*giys<*r4$JT2<Hqo^7>\,T$ysr52gox{C27Hi{^-2U72wymsH7ii0&O5*,ix@=H\.,$sey<*2&QgD,.7ey^;>b;>q&ro<5$otyT6THwoSH*[.=$vsy>.vk$gM=.HjxH70W55e&e4HyyowwT.H=mtB2-c7=$kvg=HxuvzN;THwoSH*[.=$gpo:>iz$jN58;$iN66]-8$gx4HvyrpgLH>5pgL,8`9.v&r{55e&zkG2,>pg^<.[H?itit*=my$|T59>xgS.Vmx.prit=.wwyk^1*+mz@7=m68vhm&=;myxoP>.HwkM.,b><$kx&7.x{w&D=H6erD<>O-*$les.<$gg&S>;9my^.0S<=ey2&x;ekwkM=H>x&N;,WH6m4$T>5pgq&R.-HhgO2+c<He{k{.T$gx&R855miH=>R27$|ir2=2&
+decodificar_patron 4 64
+W#h,o6i b6i{tyv|sww{!#|*!$n*u{) p*%zf6yw!-nzbB60!{syp%")b)j6r,f6+&e&!#t*!yf$j%|*!0%zfyv*j&s{t6(,f6y&n{-{o6z%!$&$f%y&!zr+f)r owe&6|v{s&s6m&x6j%q dwi&tB-'p)%wi&)w!%fzb6" f%j6t{%+jztB!*v%!{rxb)h&B6o&!{x6v%f6u)n}fznw-6r*!,s6n *+f)n&!(#{!zj*d,x)j)3
+dp 7 2
+RANDOM
+fin
+
+#	S O R T I D A		C O M E N T A D A
+
+#listar_mensajes											// ES LLISTEN TOTS ELS MISSATGES INTRODUITS (IDENTIFICADOR I MISSATGE ENTRE COMETES)
+Persona1_1												
+"Hola bon dia com estem?"
+Persona1_2
+"Tot en ordre, escolta quan quedem?"
+Persona1_3
+"D'acord, llavors el dissabte podriem anar a sopar."
+Persona1_4
+"Jo igual, ja tocava quedar."
+Persona1_5
+"Si, el dissabte anem xerrant l'hora."
+Persona2_1
+"Bon dia, jo be i tu?"
+Persona2_2
+"Avui no puc, pero tinc el cap de setmana lliure."
+Persona2_3
+"Perfecte, fa tant que no ens veiem que tinc ganes de veure't."
+Persona2_4
+"D'acord doncs quedem aixi no?"
+Persona2_5
+"Perfecte! Anem xerrant..."
+#listar_rejillas											// ES LLISTEN TOTES LES REIXETES INTRODUIDES (IDENTIFICADOR, DIMENSIO, QUANTITAT DE BUITS I BUITS INICIALS I
+Rejilla 1:												// ELS FORMATS EN GIRAR LA REIXETA)
+4 4
+(1,3) (2,4) (3,2) (4,1)
+(1,2) (2,1) (3,3) (4,4)
+(1,4) (2,3) (3,1) (4,2)
+(1,1) (2,2) (3,4) (4,3)
+Rejilla 2:
+6 9
+(1,3) (1,5) (2,4) (3,1) (4,2) (4,4) (5,1) (5,5) (6,6)
+(1,6) (2,1) (2,5) (3,2) (3,4) (4,1) (5,4) (6,3) (6,5)
+(1,1) (2,2) (2,6) (3,3) (3,5) (4,6) (5,3) (6,2) (6,4)
+(1,2) (1,4) (2,3) (3,6) (4,3) (4,5) (5,2) (5,6) (6,1)
+#listar_patrones											// ES LLISTEN TOTS ELS PATRONS (ELS NODES ES REPRESENTEN ENTRE PARÈNTESIS)
+Patron 1:
+(93(47(22(15(9()())())())())(33()()))
+Patron 2:
+(7(8(3()())(5()()))(10(9()())(4()())))
+#nuevo_mensaje Persona1_1										// AFEGIM MISSATGES:
+error: ya existe un mensaje con ese identificador							// JA EXISTIA UN MISSATGE AMB IDENTIFICADOR Persona1_1
+#nm Texto1												// LES COMANDES QUE SEGUEIXEN NO DONEN ERROR I MOSTREN LA QUANTITAT DE MISSATGES DEL MOMENT
+11
+#nuevo_mensaje Texto2
+12
+#nm Texto3
+13
+#nm Texto4
+14
+#nuevo_mensaje Texto5
+15
+#nueva_rejilla												// AFEGIM REIXETES:
+error: dimensiones incorrectas de la rejilla								// ERROR: 8*4 != 6²
+#nr
+error: la rejilla con sus giros no cubre todas las posiciones N x N					// BUITS 1 1 1 2 2 1 2 5 3 5 3 6 4 3 4 5 2 4 SON INVALIDS
+#nr													// ELS CASOS QUE SEGUEIXEN NO DONEN ERROR I ESCRIUEN EL NOMBRE DE REIXETES DEL MOMENT
+3
+#nueva_rejilla
+4
+#nr
+5
+#nuevo_patron												// AFEGIM PATRONS, NO POT DONAR ERROR
+3
+#np
+4
+#borra_mensaje Persona1_1										// PELS CASOS AMB EXIT ES BORRA EL MISSATGE AMB IDENTIFICADOR PER EXEMPLE Persona1_1 I S'ESCRIU EL NOMBRE
+14													// DE MISSATGES DEL MOMENT
+#borra_mensaje Persona1_6										// ERROR: NO EXISTEIX UN MISSATGE AMB IDENTIFICADOR Persona1_6 I PER TANT NO ES POT BORRAR
+error: el mensaje no existe
+#bm Texto1
+13
+#lm													// ES LLISTEN ELS MISSATGES QUE HAN QUEDAT DESPRES DE LES MODIFICACIONS
+Persona1_2
+"Tot en ordre, escolta quan quedem?"
+Persona1_3
+"D'acord, llavors el dissabte podriem anar a sopar."
+Persona1_4
+"Jo igual, ja tocava quedar."
+Persona1_5
+"Si, el dissabte anem xerrant l'hora."
+Persona2_1
+"Bon dia, jo be i tu?"
+Persona2_2
+"Avui no puc, pero tinc el cap de setmana lliure."
+Persona2_3
+"Perfecte, fa tant que no ens veiem que tinc ganes de veure't."
+Persona2_4
+"D'acord doncs quedem aixi no?"
+Persona2_5
+"Perfecte! Anem xerrant..."
+Texto2
+"Si, solo verde, las ramas estan cubiertas por hojas y espinas, pero si concentras tu vista observaras pequenos brotes."
+Texto3
+"El senor Mardon, era un gentil hombre de aproximadamente 47 aÃ±os."
+Texto4
+"Como de costumbre desperte dos horas antes de la clase, no sucede de casualidad."
+Texto5
+"Algun dia descifrare los misterios de la vida, y encontrare que todos los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir."
+#lr													// ES LLISTEN LES REIXETES QUE HAN QUEDAT DESPRES DE LES MODIFICACIONS
+Rejilla 1:
+4 4
+(1,3) (2,4) (3,2) (4,1)
+(1,2) (2,1) (3,3) (4,4)
+(1,4) (2,3) (3,1) (4,2)
+(1,1) (2,2) (3,4) (4,3)
+Rejilla 2:
+6 9
+(1,3) (1,5) (2,4) (3,1) (4,2) (4,4) (5,1) (5,5) (6,6)
+(1,6) (2,1) (2,5) (3,2) (3,4) (4,1) (5,4) (6,3) (6,5)
+(1,1) (2,2) (2,6) (3,3) (3,5) (4,6) (5,3) (6,2) (6,4)
+(1,2) (1,4) (2,3) (3,6) (4,3) (4,5) (5,2) (5,6) (6,1)
+Rejilla 3:
+6 9
+(1,1) (1,2) (2,1) (2,5) (3,5) (3,6) (4,3) (4,5) (4,6)
+(1,3) (1,4) (2,2) (2,3) (2,4) (4,4) (5,1) (6,1) (6,2)
+(3,1) (3,2) (3,4) (4,1) (4,2) (5,2) (5,6) (6,5) (6,6)
+(1,5) (1,6) (2,6) (3,3) (5,3) (5,4) (5,5) (6,3) (6,4)
+Rejilla 4:
+4 4
+(1,2) (1,4) (3,2) (3,4)
+(1,1) (1,3) (3,1) (3,3)
+(2,1) (2,3) (4,1) (4,3)
+(2,2) (2,4) (4,2) (4,4)
+Rejilla 5:
+8 16
+(1,1) (1,2) (1,3) (1,4) (2,1) (2,2) (2,3) (2,4) (3,1) (3,2) (3,3) (3,4) (4,1) (4,2) (4,3) (4,4)
+(5,1) (5,2) (5,3) (5,4) (6,1) (6,2) (6,3) (6,4) (7,1) (7,2) (7,3) (7,4) (8,1) (8,2) (8,3) (8,4)
+(5,5) (5,6) (5,7) (5,8) (6,5) (6,6) (6,7) (6,8) (7,5) (7,6) (7,7) (7,8) (8,5) (8,6) (8,7) (8,8)
+(1,5) (1,6) (1,7) (1,8) (2,5) (2,6) (2,7) (2,8) (3,5) (3,6) (3,7) (3,8) (4,5) (4,6) (4,7) (4,8)
+#lp													// ES LLISTEN ELS PATRONS QUE HAN QUEDAT DESPRÉS DE LES MODIFICACIONS
+Patron 1:
+(93(47(22(15(9()())())())())(33()()))
+Patron 2:
+(7(8(3()())(5()()))(10(9()())(4()())))
+Patron 3:
+(40(4(62()())())(6()(77()())))
+Patron 4:
+(22()(1()(5()(13()()))))
+#cr 5													// ES CODIFICA UN MISSATGE RANDOM MOLT GRAN AMB UNA REIXETA GRAN
+"Loreing m ipelitsum . Aedoloneanr siectet amtueret,  adiconspisc comciismodo nat ligoqueula  penegetan m dolassaor. . CuAenem soatib ridus eicult maus mgnisus.  dismont pares, turinascent eturDone, prc quetiuam fm quelisis, , ul peltriclenties esqunec,e eusem. jus Nulto, la cfrinonsegillquatenim mas. Dosa qnec uis pedea vem jul, asto,liqu rhoet nncusec, et, vulparcuutat. Ine eg eni ut, dic imptum erdifeliet as eu, vee, jnenaustotis . Nuvitallam pedpibue mos. Vllisivam preus etiumncid. Inunt.tege Crar tis dalemetellntumus.  semAeneper an lnisiputa. Aete eneanleif vulend eo lnd aigulc, ea, pnim.ortt Aliitorat v eu,itae con, elsequeifequamat a lor, teem allusnte,. Ph daperraibus qui in,s, f viveugiaseluisqlus ue rviveutrurra m. Anullariua uts la metoreeus vt. Qenea Curn imabitperdur uiet.llam Eti nisam ui veltril auciesgue.corpus. er uMaecltrienascies tem nisdui.i. N Etiam eam rget honcpus,empe telr lilus beroeget, si conncusdime, sentumm qu rhoam st amnuncet a, bldipiandiscint veg seipsum nem. Nque am qsed uam l, ls neuctuc ods puio elvint anar, , lohendrem.reri Maet idcenate to veincinenadunttis  temfaucpus. sap Donien ec vut litaeiberibus ero. Nus fallamucib quius ts ant amte. et oEtiarci m siegetinci    dunt    . Du    is l    eo.                             "
+#codificar_rejilla 1											// ES CODIFICA UN MISSATGE PETIT AMB UNA REIXETA PETITA
+"ftEdruila oio   tgaaab  fjrouul g   moacmoisni.s"
+#codificar_rejilla 6											// ERROR: REIXETA AMB IDENTIFICADOR 6 ES INEXISTENT
+error: la rejilla no existe
+#cr 3													// ES CODIFICA UN MISSATJE MITJÀ AMB UNA REIXETA UN POC MES GRAN QUE LA 1
+"I  tthwo taeou nkeds hupe silo senf celld  owsttomo hamyt. a   rumFrn inaritheoh mu r gundp ,y w trouoeand t.                                   "
+#codificar_guardado_rejilla Texto3 2									// A PARTIR D'AQUI ES CODIFIQUEN MISSATGES GUARDATS DE DIVERSES MIDES AMB REIXETES DE DIVERSES MIDES
+"rtEilMaal r sduon nehno omg,rbre ne toes xie.dm ea4d7 a  a  p amr  Ãe±no"
+#cgr Texto6 3
+error: el mensaje no existe										// ERROR: MISSATGE INEXISTENT
+#cgr Texto4 3
+"Coosdomtumosde s dpeeb crrhorte ase  a ldena ct , dneso  ldease cuseasceua    l   i     da  d .             "
+#cgr Persona2_2 0
+error: la rejilla no existe										// ERROR: REIXETA INEXISTENT (DE FET NO POT EXISTIR L'IDENTIFICADOR)
+#codificar_guardado_rejilla Persona2_5 4
+"ePce!e mtrefA nxnetr.   .r.a    "
+#cgr Persona2_3 2
+"qsP e fuvraef  tneaeiceotm ne qetn ,e u eanu  ertse ' di n tc .e      vg"
+#cgr Persona1_3 1
+"voD rol'ladrcas, d aipbetlso edss rrao iaenpm aa  r    .        "
+#cgr Texto5 3
+"Al dstgescuerer n lodiiafsios ra dmie ,  tly eaotrda vreindac os qonloues  ytoc deamoneemis ncosiq enusi ue n  dn meteoladoome fnrtomus ieinndroicore a ahdsnaedosa ,o prtntiia doen, aragsgo,ieesd n une mbnaia, o  etrs er. uio n de s mcuiqstub   re   ir"
+#decodificar_rejilla 43										// ES DECODIFIQUEN MISSATGES INTRODUITS, EL PRIMER DONA ERROR PER REIXETA AMB IDENTIFICADOR 43 INEXISTENT
+error: la rejilla no existe
+#decodificar_rejilla 2											// ES DECODIFICA UN MISSATGE NORMAL CODIFICAT ANTERIORMENT AMB LA MATEIXA REIXETA AVAM SI QUEDA L'INICIAL
+"Perfecte, fa tant que no ens veiem que tinc ganes de veure't.           "
+#dr 2
+error: la dimension del mensaje es inadecuada para la rejilla					// ERROR: LA MIDA DEL MISSATGE INTRODUIT NO ES MULTIPLE DE LA DIMENSIO DE LA REIXETA
+#decodificar_rejilla 3											// ES DECODIFIQUEN DOS MISSATGES GRANS CODIFICATS ANTERIORMENT AMB LES MATEIXES REIXETES PER VEURE SI 
+													// QUEDA L'INICIAL
+"Algun dia descifrare los misterios de la vida, y encontrare que todo los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir.         "
+#dr 5
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.                                             "
+#cp 0 44												// ERROR: PATRÓ INEXISTENT, IDENTIFICADOR INVÀLID
+error: el patron no existe
+#codificar_patron 3 22											// ES CODIFICA UN MISSATGE FORÇA GRAN AMB BLOCS DE MIDA CONSIDERABLE
+"lstD,HP2+ith{6Hmj$zD55>w&P>2aH.pkml.7h4$WT2<:yk^.>m.;sy$k;*x4$WT2<:yk^78\H.yows8-$otyT6VHRgLH2O,>pow&7.u{i&@,H2eiT52aH*giys<*r4$JT2<Hqo^7>\,T$ysr52gox{C27Hi{^-2U72wymsH7ii0&O5*,ix@=H\.,$sey<*2&QgD,.7ey^;>b;>q&ro<5$otyT6THwoSH*[.=$vsy>.vk$gM=.HjxH70W55e&e4HyyowwT.H=mtB2-c7=$kvg=HxuvzN;THwoSH*[.=$gpo:>iz$jN58;$iN66]-8$gx4HvyrpgLH>5pgL,8`9.v&r{55e&zkG2,>pg^<.[H?itit*=my$|T59>xgS.Vmx.prit=.wwyk^1*+mz@7=m68vhm&=;myxoP>.HwkM.,b><$kx&7.x{w&D=H6erD<>O-*$les.<$gg&S>;9my^.0S<=ey2&x;ekwkM=H>x&N;,WH6m4$T>5pgq&R.-HhgO2+c<He{k{.T$gx&R855miH=>R27$|ir2=2&"
+#cp 1 4												// ES CODIFICA UN MISSATGE PETIT AMB BLOCS PETITS I UN ARBRE PROU GRAN
+"_2%zc6)~g:-#k>1'oB5+sF9/wJA6}OA6"
+#codificar_guardado_patron Persona2_3 2 13								// PROVEM EL RESULTAT AMB PATRONS I BLOCS DIFERENTS PER A ALGUNS DELS MISSATGES QUE TENIM GUARDATS
+"Wm|ijlxl3'mh'{ixw%zyl'uv'lu{*yjrit'x|l'{qxf%peulz'kl'~oxwn+{5"
+#codificar_guardado_patron Texto2 1 10
+"Q9M6qmj~}FcB&{*}jpqOp1/wq}c#r1lO%,`gc"r1qO2&p}f~h1qO;6cqnxl1q[A'cpm/q9}31%acl$p1qO6,}tg#r1}?$*cptpp1qO2{osc}mC}24&rcq="
+#cgp Texto5 5 64
+error: el patron no existe										// ERROR: PATRÓ INEXISTENT
+#cgp Texto5 4 64
+"W#h,o6i b6i{tyv|sww{!#|*!$n*u{) p*%zf6yw!-nzbB60!{syp%")b)j6r,f6+&e&t6q&t6hwn {&t6~6e{p t t%f*6(v{%+p$r6f%%,o6$&n{s+p6q{u{w$j%bz&6g,f)t%!#t*! {zjyfzp*96q&w6b~&)b6swew-+j{s{!*{%u i&-6! o6j$cws}&B!%p6j*!,sw!+ wh{i bB-{t6z%!$ *u{w p6~,f6i{ty,xs wD"
+#cgp Texto6 1 23									
+error: el mensaje no existe										// ERROR: MISSATGE INEXISTENT
+#dp 3 22												// ES DECODIFIQUEN DOS DELS MISSATGES CODIFICATS ANTERIORMENT I SI OBSERVEM L'INPUT VEIM QUE QUEDA IGUAL
+"Donec bibendum id tellus quis eleifend. Quisque eu eros erat. Quisque non euismod ipsum. Nam iaculis neque ac iaculis accumsan. Duis mi nunc, sollicitudin eu dignissim nec, placerat nec massa. Maecenas rutrum nisl ipsum, sit amet posuere ante fringilla a. Quisque tincidunt erat tortor, sit amet aliquet dolor commodo at. Nullam ullamcorper nulla vehicula sem venenatis vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut orci mi. Nullam sed dapibus augue, at sollicitudin velit. "
+#decodificar_patron 4 64
+"Algun dia descifrare los misterios de la vida, y encontrare que todo los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir."
+#dp 7 2
+error: el patron no existe										// ERROR: PATRÓ INEXISTENT                                
+
+#	S O R T I D A		S E N S E	     C O M E N T A R
+
+#listar_mensajes											// ES LLISTEN TOTS ELS MISSATGES INTRODUITS (IDENTIFICADOR I MISSATGE ENTRE COMETES)
+Persona1_1												
+"Hola bon dia com estem?"
+Persona1_2
+"Tot en ordre, escolta quan quedem?"
+Persona1_3
+"D'acord, llavors el dissabte podriem anar a sopar."
+Persona1_4
+"Jo igual, ja tocava quedar."
+Persona1_5
+"Si, el dissabte anem xerrant l'hora."
+Persona2_1
+"Bon dia, jo be i tu?"
+Persona2_2
+"Avui no puc, pero tinc el cap de setmana lliure."
+Persona2_3
+"Perfecte, fa tant que no ens veiem que tinc ganes de veure't."
+Persona2_4
+"D'acord doncs quedem aixi no?"
+Persona2_5
+"Perfecte! Anem xerrant..."
+#listar_rejillas											
+Rejilla 1:												
+4 4
+(1,3) (2,4) (3,2) (4,1)
+(1,2) (2,1) (3,3) (4,4)
+(1,4) (2,3) (3,1) (4,2)
+(1,1) (2,2) (3,4) (4,3)
+Rejilla 2:
+6 9
+(1,3) (1,5) (2,4) (3,1) (4,2) (4,4) (5,1) (5,5) (6,6)
+(1,6) (2,1) (2,5) (3,2) (3,4) (4,1) (5,4) (6,3) (6,5)
+(1,1) (2,2) (2,6) (3,3) (3,5) (4,6) (5,3) (6,2) (6,4)
+(1,2) (1,4) (2,3) (3,6) (4,3) (4,5) (5,2) (5,6) (6,1)
+#listar_patrones											
+Patron 1:
+(93(47(22(15(9()())())())())(33()()))
+Patron 2:
+(7(8(3()())(5()()))(10(9()())(4()())))
+#nuevo_mensaje Persona1_1										
+error: ya existe un mensaje con ese identificador							
+#nm Texto1												
+11
+#nuevo_mensaje Texto2
+12
+#nm Texto3
+13
+#nm Texto4
+14
+#nuevo_mensaje Texto5
+15
+#nueva_rejilla												
+error: dimensiones incorrectas de la rejilla								
+#nr
+error: la rejilla con sus giros no cubre todas las posiciones N x N					
+#nr													
+3
+#nueva_rejilla
+4
+#nr
+5
+#nuevo_patron												
+3
+#np
+4
+#borra_mensaje Persona1_1										
+14													
+#borra_mensaje Persona1_6										
+error: el mensaje no existe
+#bm Texto1
+13
+#lm													
+Persona1_2
+"Tot en ordre, escolta quan quedem?"
+Persona1_3
+"D'acord, llavors el dissabte podriem anar a sopar."
+Persona1_4
+"Jo igual, ja tocava quedar."
+Persona1_5
+"Si, el dissabte anem xerrant l'hora."
+Persona2_1
+"Bon dia, jo be i tu?"
+Persona2_2
+"Avui no puc, pero tinc el cap de setmana lliure."
+Persona2_3
+"Perfecte, fa tant que no ens veiem que tinc ganes de veure't."
+Persona2_4
+"D'acord doncs quedem aixi no?"
+Persona2_5
+"Perfecte! Anem xerrant..."
+Texto2
+"Si, solo verde, las ramas estan cubiertas por hojas y espinas, pero si concentras tu vista observaras pequenos brotes."
+Texto3
+"El senor Mardon, era un gentil hombre de aproximadamente 47 aÃ±os."
+Texto4
+"Como de costumbre desperte dos horas antes de la clase, no sucede de casualidad."
+Texto5
+"Algun dia descifrare los misterios de la vida, y encontrare que todos los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir."
+#lr													
+Rejilla 1:
+4 4
+(1,3) (2,4) (3,2) (4,1)
+(1,2) (2,1) (3,3) (4,4)
+(1,4) (2,3) (3,1) (4,2)
+(1,1) (2,2) (3,4) (4,3)
+Rejilla 2:
+6 9
+(1,3) (1,5) (2,4) (3,1) (4,2) (4,4) (5,1) (5,5) (6,6)
+(1,6) (2,1) (2,5) (3,2) (3,4) (4,1) (5,4) (6,3) (6,5)
+(1,1) (2,2) (2,6) (3,3) (3,5) (4,6) (5,3) (6,2) (6,4)
+(1,2) (1,4) (2,3) (3,6) (4,3) (4,5) (5,2) (5,6) (6,1)
+Rejilla 3:
+6 9
+(1,1) (1,2) (2,1) (2,5) (3,5) (3,6) (4,3) (4,5) (4,6)
+(1,3) (1,4) (2,2) (2,3) (2,4) (4,4) (5,1) (6,1) (6,2)
+(3,1) (3,2) (3,4) (4,1) (4,2) (5,2) (5,6) (6,5) (6,6)
+(1,5) (1,6) (2,6) (3,3) (5,3) (5,4) (5,5) (6,3) (6,4)
+Rejilla 4:
+4 4
+(1,2) (1,4) (3,2) (3,4)
+(1,1) (1,3) (3,1) (3,3)
+(2,1) (2,3) (4,1) (4,3)
+(2,2) (2,4) (4,2) (4,4)
+Rejilla 5:
+8 16
+(1,1) (1,2) (1,3) (1,4) (2,1) (2,2) (2,3) (2,4) (3,1) (3,2) (3,3) (3,4) (4,1) (4,2) (4,3) (4,4)
+(5,1) (5,2) (5,3) (5,4) (6,1) (6,2) (6,3) (6,4) (7,1) (7,2) (7,3) (7,4) (8,1) (8,2) (8,3) (8,4)
+(5,5) (5,6) (5,7) (5,8) (6,5) (6,6) (6,7) (6,8) (7,5) (7,6) (7,7) (7,8) (8,5) (8,6) (8,7) (8,8)
+(1,5) (1,6) (1,7) (1,8) (2,5) (2,6) (2,7) (2,8) (3,5) (3,6) (3,7) (3,8) (4,5) (4,6) (4,7) (4,8)
+#lp													
+Patron 1:
+(93(47(22(15(9()())())())())(33()()))
+Patron 2:
+(7(8(3()())(5()()))(10(9()())(4()())))
+Patron 3:
+(40(4(62()())())(6()(77()())))
+Patron 4:
+(22()(1()(5()(13()()))))
+#cr 5													
+"Loreing m ipelitsum . Aedoloneanr siectet amtueret,  adiconspisc comciismodo nat ligoqueula  penegetan m dolassaor. . CuAenem soatib ridus eicult maus mgnisus.  dismont pares, turinascent eturDone, prc quetiuam fm quelisis, , ul peltriclenties esqunec,e eusem. jus Nulto, la cfrinonsegillquatenim mas. Dosa qnec uis pedea vem jul, asto,liqu rhoet nncusec, et, vulparcuutat. Ine eg eni ut, dic imptum erdifeliet as eu, vee, jnenaustotis . Nuvitallam pedpibue mos. Vllisivam preus etiumncid. Inunt.tege Crar tis dalemetellntumus.  semAeneper an lnisiputa. Aete eneanleif vulend eo lnd aigulc, ea, pnim.ortt Aliitorat v eu,itae con, elsequeifequamat a lor, teem allusnte,. Ph daperraibus qui in,s, f viveugiaseluisqlus ue rviveutrurra m. Anullariua uts la metoreeus vt. Qenea Curn imabitperdur uiet.llam Eti nisam ui veltril auciesgue.corpus. er uMaecltrienascies tem nisdui.i. N Etiam eam rget honcpus,empe telr lilus beroeget, si conncusdime, sentumm qu rhoam st amnuncet a, bldipiandiscint veg seipsum nem. Nque am qsed uam l, ls neuctuc ods puio elvint anar, , lohendrem.reri Maet idcenate to veincinenadunttis  temfaucpus. sap Donien ec vut litaeiberibus ero. Nus fallamucib quius ts ant amte. et oEtiarci m siegetinci    dunt    . Du    is l    eo.                             "
+#codificar_rejilla 1											
+"ftEdruila oio   tgaaab  fjrouul g   moacmoisni.s"
+#codificar_rejilla 6											
+error: la rejilla no existe
+#cr 3													
+"I  tthwo taeou nkeds hupe silo senf celld  owsttomo hamyt. a   rumFrn inaritheoh mu r gundp ,y w trouoeand t.                                   "
+#codificar_guardado_rejilla Texto3 2									
+"rtEilMaal r sduon nehno omg,rbre ne toes xie.dm ea4d7 a  a  p amr  Ãe±no"
+#cgr Texto6 3
+error: el mensaje no existe										
+#cgr Texto4 3
+"Coosdomtumosde s dpeeb crrhorte ase  a ldena ct , dneso  ldease cuseasceua    l   i     da  d .             "
+#cgr Persona2_2 0
+error: la rejilla no existe										
+#codificar_guardado_rejilla Persona2_5 4
+"ePce!e mtrefA nxnetr.   .r.a    "
+#cgr Persona2_3 2
+"qsP e fuvraef  tneaeiceotm ne qetn ,e u eanu  ertse ' di n tc .e      vg"
+#cgr Persona1_3 1
+"voD rol'ladrcas, d aipbetlso edss rrao iaenpm aa  r    .        "
+#cgr Texto5 3
+"Al dstgescuerer n lodiiafsios ra dmie ,  tly eaotrda vreindac os qonloues  ytoc deamoneemis ncosiq enusi ue n  dn meteoladoome fnrtomus ieinndroicore a ahdsnaedosa ,o prtntiia doen, aragsgo,ieesd n une mbnaia, o  etrs er. uio n de s mcuiqstub   re   ir"
+#decodificar_rejilla 43										
+error: la rejilla no existe
+#decodificar_rejilla 2											
+"Perfecte, fa tant que no ens veiem que tinc ganes de veure't.           "
+#dr 2
+error: la dimension del mensaje es inadecuada para la rejilla					
+#decodificar_rejilla 3											
+"Algun dia descifrare los misterios de la vida, y encontrare que todo los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir.         "
+#dr 5
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.                                             "
+#cp 0 44												
+error: el patron no existe
+#codificar_patron 3 22											
+"lstD,HP2+ith{6Hmj$zD55>w&P>2aH.pkml.7h4$WT2<:yk^.>m.;sy$k;*x4$WT2<:yk^78\H.yows8-$otyT6VHRgLH2O,>pow&7.u{i&@,H2eiT52aH*giys<*r4$JT2<Hqo^7>\,T$ysr52gox{C27Hi{^-2U72wymsH7ii0&O5*,ix@=H\.,$sey<*2&QgD,.7ey^;>b;>q&ro<5$otyT6THwoSH*[.=$vsy>.vk$gM=.HjxH70W55e&e4HyyowwT.H=mtB2-c7=$kvg=HxuvzN;THwoSH*[.=$gpo:>iz$jN58;$iN66]-8$gx4HvyrpgLH>5pgL,8`9.v&r{55e&zkG2,>pg^<.[H?itit*=my$|T59>xgS.Vmx.prit=.wwyk^1*+mz@7=m68vhm&=;myxoP>.HwkM.,b><$kx&7.x{w&D=H6erD<>O-*$les.<$gg&S>;9my^.0S<=ey2&x;ekwkM=H>x&N;,WH6m4$T>5pgq&R.-HhgO2+c<He{k{.T$gx&R855miH=>R27$|ir2=2&"
+#cp 1 4												
+"_2%zc6)~g:-#k>1'oB5+sF9/wJA6}OA6"
+#codificar_guardado_patron Persona2_3 2 13								
+"Wm|ijlxl3'mh'{ixw%zyl'uv'lu{*yjrit'x|l'{qxf%peulz'kl'~oxwn+{5"
+#codificar_guardado_patron Texto2 1 10
+"Q9M6qmj~}FcB&{*}jpqOp1/wq}c#r1lO%,`gc"r1qO2&p}f~h1qO;6cqnxl1q[A'cpm/q9}31%acl$p1qO6,}tg#r1}?$*cptpp1qO2{osc}mC}24&rcq="
+#cgp Texto5 5 64
+error: el patron no existe										
+#cgp Texto5 4 64
+"W#h,o6i b6i{tyv|sww{!#|*!$n*u{) p*%zf6yw!-nzbB60!{syp%")b)j6r,f6+&e&t6q&t6hwn {&t6~6e{p t t%f*6(v{%+p$r6f%%,o6$&n{s+p6q{u{w$j%bz&6g,f)t%!#t*! {zjyfzp*96q&w6b~&)b6swew-+j{s{!*{%u i&-6! o6j$cws}&B!%p6j*!,sw!+ wh{i bB-{t6z%!$ *u{w p6~,f6i{ty,xs wD"
+#cgp Texto6 1 23									
+error: el mensaje no existe										
+#dp 3 22												
+"Donec bibendum id tellus quis eleifend. Quisque eu eros erat. Quisque non euismod ipsum. Nam iaculis neque ac iaculis accumsan. Duis mi nunc, sollicitudin eu dignissim nec, placerat nec massa. Maecenas rutrum nisl ipsum, sit amet posuere ante fringilla a. Quisque tincidunt erat tortor, sit amet aliquet dolor commodo at. Nullam ullamcorper nulla vehicula sem venenatis vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut orci mi. Nullam sed dapibus augue, at sollicitudin velit. "
+#decodificar_patron 4 64
+"Algun dia descifrare los misterios de la vida, y encontrare que todo los caminos y decisiones que tome en un momento determinado fueron los indicados, por ahora nada tiene sentido, sin embargo, no es una tragedia, es un misterio que descubrir."
+#dp 7 2
+error: el patron no existe
