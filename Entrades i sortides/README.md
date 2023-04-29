@@ -1,4 +1,4 @@
-#Continguts:
+# Continguts:
 * jp_xavier.marti.llull.txt: joc de proves complet comentat.
 * xavier.marti.llullinp: només entrada sense comentar.
 * xavier.marti.llullinpcomentat: només entrada comentada.
