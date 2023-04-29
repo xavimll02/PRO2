@@ -1,4 +1,4 @@
 # PRO2: Programació 2
 ## Continguts:
-* DocumentacióProjecte.zip: documentació Doxygen de la pràctica realitzada durant l'assignatura de PRO2.
-* Projecte: directori amb les classes implementades, jocs de prova, enunciat i executable de la pràcitca de PRO2.
+* practica.tar: pràctica PRO2: xifratge i desxifratge de missatges usant matrius i arbres binaris. Conté les classes implementades junt amb un makefile i la documentació de les classes.
+* Entrades i sortides del programa comentats i sense comentar.
